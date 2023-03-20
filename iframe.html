@@ -180,6 +180,17 @@
     // cannot use inline CSS
     // because the element created after user right click
     $('body').insertAdjacentHTML('afterbegin', '<style>.ytp-contextmenu{visibility:hidden;}</style>');
+
+    function preventLongPressMenu(nodes) {
+      for(var i=0; i<nodes.length; i++){
+        nodes[i].ontouchstart = absorbEvent_;
+        nodes[i].ontouchmove = absorbEvent_;
+        nodes[i].ontouchend = absorbEvent_;
+        nodes[i].ontouchcancel = absorbEvent_;
+      }
+    }
+
+    preventLongPressMenu(document.getElementsByTagName('video'));
   </script>
 </body>
 
