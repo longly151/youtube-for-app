@@ -167,6 +167,9 @@
     document.addEventListener('mozfullscreenchange', onFullScreenChange);
     document.addEventListener('webkitfullscreenchange', onFullScreenChange);
     
+    const div = document.getElementById("container");
+    div.addEventListener("contextmenu", (e) => {e.preventDefault()});
+
     document.addEventListener('contextmenu', event => event.preventDefault());
     document.body.addEventListener("yt-navigate-finish", function (event) {
       console.log('Youtube page Change')
