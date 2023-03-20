@@ -141,10 +141,10 @@
     }
 
     function onPlayerStateChange(event) {
-      // sendMessageToRN({
-      //   eventType: 'playerStateChange',
-      //   data: event.data
-      // });
+      sendMessageToRN({
+        eventType: 'playerStateChange',
+        data: event.data
+      });
     }
 
     var isFullScreen = false;
